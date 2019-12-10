@@ -50,6 +50,30 @@ Restart"
 Once you've done this, you should see activity in the terminal window where the
 docker container is running, every time you execute a `docker pull` command.
 
+## Deploying to kubernetes
+
+The yaml files in `cloud-platform-deploy/` assume deployment to:
+
+* Cluster: `docker-cache.cloud-platform.service.justice.gov.uk`
+* Namespace: `docker-cache`
+
+You need to edit them to the appropriate values for your setting.
+
+### Create your namespace
+
+`kubectl create namespace docker-cache`
+
+### Deploy
+
+`kubectl -n docker-cache apply -f cloud-platform-deploy/`
+
+### Test
+
+Once you have deployed the app, you should be able to test it like this:
+
+    curl -I https://docker-registry-cache.apps.docker-cache.cloud-platform.service.justice.gov.uk/v2/
+
+You should get similar output as when running on localhost.
 
 [docker hub]: https://hub.docker.com/
 [docker registry]: https://docs.docker.com/registry/recipes/mirror/
