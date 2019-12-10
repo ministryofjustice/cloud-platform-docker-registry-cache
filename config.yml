@@ -13,7 +13,7 @@ storage:
   cache:
     blobdescriptor: inmemory
   filesystem:
-    rootdirectory: /var/lib/registry
+    rootdirectory: /var/lib/docker-cache
 
 health:
   storagedriver:

@@ -1,5 +1,5 @@
 IMAGE := ministryofjustice/docker-registry-cache
-TAG := 1.0
+TAG := 1.1
 
 build: .built-docker-image
 
