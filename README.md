@@ -1,15 +1,12 @@
-# Ministry of Justice Template Repository
+# Cloud Platform Docker Registry Cache
 
-Use this template to [create a repository] with the default initial settings for a Ministry of Justice Github repository, including:
+We use a lot of docker images from [docker hub].
 
-* The correct LICENSE
-* Repository settings (e.g. branch protection, admin team)
-* Github actions
-* .gitignore file
+Pulling these images can be quite slow, especially if docker hub are having performance problems.
 
-Once you have created your repository, please:
+This repository enables us to run an instance of [docker registry] as a 'pull-through' cache, in the cloud platform.
 
-* Edit the copy of this README.md file to document your project
-* Change the settings to grant permissions to the appropriate MoJ teams
+Docker images can be pulled from the cache, which is much faster.
 
-[create a repository]: https://help.github.com/en/github/creating-cloning-and-archiving-repositories/creating-a-repository-from-a-template
+[docker hub]: https://hub.docker.com/
+[docker registry]: https://docs.docker.com/registry/recipes/mirror/
