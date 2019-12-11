@@ -75,5 +75,17 @@ Once you have deployed the app, you should be able to test it like this:
 
 You should get similar output as when running on localhost.
 
+## Tell kubernetes nodes to use the cache
+
+https://github.com/kubernetes/kops/blob/master/docs/cluster_spec.md#registrymirrors
+
+Edit the kops spec and add
+
+    docker:
+      registryMirrors:
+      - https://docker-registry-cache.apps.docker-cache.cloud-platform.service.justice.gov.uk
+
+Then apply the update using `kops update` and `kops rolling-update cluster`
+
 [docker hub]: https://hub.docker.com/
 [docker registry]: https://docs.docker.com/registry/recipes/mirror/
