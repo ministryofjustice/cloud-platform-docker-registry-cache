@@ -17,3 +17,8 @@ run: .built-docker-image
 
 shell:
 	docker exec -it registry sh
+
+# deploy to docker-cache.cloud-platform.service.justice.gov.uk cluster
+deploy:
+	kubectl cluster-info | grep docker-cache && \
+		kubectl -n docker-cache apply -f cloud-platform-deploy/
