@@ -1,0 +1,8 @@
+#!/bin/sh
+
+# This script will fail if the amount of disk space
+# in use exceeds the threshold.
+
+MAX_DISK_IN_BYTES=5000000000  # 5GB (ish)
+
+test ${MAX_DISK_IN_BYTES} -gt $(du -s 2>/dev/null | cut -f 1)

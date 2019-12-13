@@ -1,9 +1,9 @@
 IMAGE := ministryofjustice/docker-registry-cache
-TAG := 1.1
+TAG := 1.4
 
 build: .built-docker-image
 
-.built-docker-image: Dockerfile makefile config.yml
+.built-docker-image: Dockerfile makefile config.yml disk-usage-high
 	docker build -t $(IMAGE) .
 	touch .built-docker-image
 
